@@ -22,7 +22,9 @@ class _HomeViewState extends State<HomeView> {
   @override
   void initState() {
     super.initState();
+    controller.initHome();
     initPlatformState();
+
   }
 
   void onStepCount(StepCount event) {

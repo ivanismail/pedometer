@@ -2,6 +2,7 @@ import 'package:get_storage/get_storage.dart';
 
 import '../../../export.dart';
 import '../../../storage.dart';
+import '../../../utils.dart';
 
 class HomeController extends GetxController {
   //* PERSONAL SETTING
@@ -29,6 +30,12 @@ class HomeController extends GetxController {
   void loadUserData() async {
     weight = GetStorage().read(XStorage.weight) ?? 0.0;
     height = GetStorage().read(XStorage.height) ?? 0.0;
+  }
+
+  Future initHome() async {
+    if (!checkToken()) {
+      Get.offAllNamed(Routes.PERSONAL_SETTING);
+    }
   }
 
   // void initPedometer() {
