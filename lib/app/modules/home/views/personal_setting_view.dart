@@ -20,37 +20,43 @@ class _PersonalSettingViewState extends State<PersonalSettingView> {
       appBar: AppBar(
         title: Text('Personal Setting'),
       ),
-      body: Padding(
-        padding: EdgeInsets.all(16.0),
-        child: Column(
-          children: <Widget>[
-            TextField(
-              controller: controller.genderController,
-              decoration: InputDecoration(labelText: 'Gender'),
-              keyboardType: TextInputType.text,
+      body: GetBuilder<HomeController>(
+        init: HomeController(),
+        initState: (_) {},
+        builder: (_) {
+          return Padding(
+            padding: EdgeInsets.all(16.0),
+            child: Column(
+              children: <Widget>[
+                TextField(
+                  controller: controller.genderController,
+                  decoration: InputDecoration(labelText: 'Gender'),
+                  keyboardType: TextInputType.text,
+                ),
+                TextField(
+                  controller: controller.ageController,
+                  decoration: InputDecoration(labelText: 'Age'),
+                  keyboardType: TextInputType.number,
+                ),
+                TextField(
+                  controller: controller.weightController,
+                  decoration: InputDecoration(labelText: 'Weight (kg)'),
+                  keyboardType: TextInputType.number,
+                ),
+                TextField(
+                  controller: controller.heightController,
+                  decoration: InputDecoration(labelText: 'Height (cm)'),
+                  keyboardType: TextInputType.number,
+                ),
+                SizedBox(height: 20),
+                ElevatedButton(
+                  onPressed: controller.saveData,
+                  child: Text('Save & Continue'),
+                ),
+              ],
             ),
-            TextField(
-              controller: controller.ageController,
-              decoration: InputDecoration(labelText: 'Age'),
-              keyboardType: TextInputType.number,
-            ),
-            TextField(
-              controller: controller.weightController,
-              decoration: InputDecoration(labelText: 'Weight (kg)'),
-              keyboardType: TextInputType.number,
-            ),
-            TextField(
-              controller: controller.heightController,
-              decoration: InputDecoration(labelText: 'Height (cm)'),
-              keyboardType: TextInputType.number,
-            ),
-            SizedBox(height: 20),
-            ElevatedButton(
-              onPressed: controller.saveData,
-              child: Text('Save & Continue'),
-            ),
-          ],
-        ),
+          );
+        },
       ),
     );
   }
