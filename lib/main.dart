@@ -7,9 +7,15 @@ import 'app/routes/app_pages.dart';
 void main() {
   runApp(
     GetMaterialApp(
-      title: "Application",
+      title: "Pedometer",
       initialRoute: AppPages.INITIAL,
       getPages: AppPages.routes,
+      builder: (context, child) {
+        return MediaQuery(
+          child: child!,
+          data: MediaQuery.of(context).copyWith(textScaleFactor: .9),
+        );
+      },
     ),
   );
 }

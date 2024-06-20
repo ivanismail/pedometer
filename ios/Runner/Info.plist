@@ -43,5 +43,11 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+	<key>NSMotionUsageDescription</key>
+	<string>We need access to your motion data to track your steps.</string>
+	<key>NSHealthUpdateUsageDescription</key>
+	<string>We need access to your health data to track your steps.</string>
+	<key>NSHealthShareUsageDescription</key>
+	<string>We need access to your health data to track your steps.</string>
 </dict>
 </plist>
